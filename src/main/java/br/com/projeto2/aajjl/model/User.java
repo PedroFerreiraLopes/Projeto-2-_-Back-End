@@ -1,11 +1,11 @@
 package br.com.projeto2.aajjl.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "User")
+@NoArgsConstructor
 @Getter
 @Setter
 public class User {
@@ -13,6 +13,8 @@ public class User {
     //atributos do sistema
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false, unique = true)
+    @Setter(AccessLevel.NONE)
     private Long id;
 
     //atributos identificadores
@@ -30,11 +32,11 @@ public class User {
 
 
     //Contrutor
-    public User(Long id, Boolean medico, Boolean enfermeiro,
+    @Builder
+    public User(Boolean medico, Boolean enfermeiro,
                 Boolean enfermeior_chefe, Boolean assistente_social,
                 Boolean paciente, String name, String cpf) {
 
-        this.id = id;
         this.medico = medico;
         this.enfermeiro = enfermeiro;
         this.enfermeior_chefe = enfermeior_chefe;
@@ -46,14 +48,6 @@ public class User {
 
 
     //Getters and Setters sao desnecessarios com o Lombok mas eu vo deixar por enquanto pra ficar mais facil de ler o codigo e se precisar fazer um get ou set diferenciado.
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public Boolean getMedico() {
         return medico;
     }
