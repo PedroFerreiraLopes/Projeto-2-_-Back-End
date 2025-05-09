@@ -17,7 +17,8 @@ public class User {
     @Setter(AccessLevel.NONE)
     private Long id;
 
-    //atributos identificadores
+    //Getters and Setters sao desnecessarios com o Lombok mas eu vo deixar por enquanto pra ficar mais facil de ler o codigo e se precisar fazer um get ou set diferenciado.
+    //atributos identificadores de profissao ja que estamos utilizando uma entidade unica.
     private Boolean medico;
     private Boolean enfermeiro;
     private Boolean enfermeior_chefe;
@@ -30,8 +31,7 @@ public class User {
     private Integer idade;
     private String documento_profisional;
 
-
-    //Contrutor
+    //Construtor completo pois o liso nao precisa pois o Lombook ja tem o @NoArgsConstructor
     @Builder
     public User(Boolean medico, Boolean enfermeiro,
                 Boolean enfermeior_chefe, Boolean assistente_social,
@@ -46,79 +46,5 @@ public class User {
         this.cpf = cpf;
     }
 
-
-    //Getters and Setters sao desnecessarios com o Lombok mas eu vo deixar por enquanto pra ficar mais facil de ler o codigo e se precisar fazer um get ou set diferenciado.
-    public Boolean getMedico() {
-        return medico;
-    }
-
-    public void setMedico(Boolean medico) {
-        this.medico = medico;
-    }
-
-    public Boolean getEnfermeiro() {
-        return enfermeiro;
-    }
-
-    public void setEnfermeiro(Boolean enfermeiro) {
-        this.enfermeiro = enfermeiro;
-    }
-
-    public Boolean getEnfermeior_chefe() {
-        return enfermeior_chefe;
-    }
-
-    public void setEnfermeior_chefe(Boolean enfermeior_chefe) {
-        this.enfermeior_chefe = enfermeior_chefe;
-    }
-
-    public Boolean getAssistente_social() {
-        return assistente_social;
-    }
-
-    public void setAssistente_social(Boolean assistente_social) {
-        this.assistente_social = assistente_social;
-    }
-
-    public Boolean getPaciente() {
-        return paciente;
-    }
-
-    public void setPaciente(Boolean paciente) {
-        this.paciente = paciente;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public Integer getIdade() {
-        return idade;
-    }
-
-    public void setIdade(Integer idade) {
-        this.idade = idade;
-    }
-
-    public String getDocumento_profisional() {
-        return documento_profisional;
-    }
-
-    public void setDocumento_profisional(String documento_profisional) {
-        this.documento_profisional = documento_profisional;
-    }
-
-
+    //Retirnado Getters and Setters pq o Lombok tava mostrando errinho
 }
