@@ -21,7 +21,7 @@ public class User {
     //atributos identificadores de profissao ja que estamos utilizando uma entidade unica.
     private Boolean medico;
     private Boolean enfermeiro;
-    private Boolean enfermeior_chefe;
+    private Boolean enfermeiro_chefe;
     private Boolean assistente_social;
     private Boolean paciente;
 
@@ -39,7 +39,7 @@ public class User {
 
         this.medico = medico;
         this.enfermeiro = enfermeiro;
-        this.enfermeior_chefe = enfermeior_chefe;
+        this.enfermeiro_chefe = enfermeior_chefe;
         this.assistente_social = assistente_social;
         this.paciente = paciente;
         this.name = name;
