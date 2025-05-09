@@ -17,40 +17,32 @@ public class User {
     @Setter(AccessLevel.NONE)
     private Long id;
 
-    //Getters and Setters sao desnecessarios com o Lombok mas eu vo deixar por enquanto pra ficar mais facil de ler o codigo e se precisar fazer um get ou set diferenciado.
-    //atributos identificadores de profissao ja que estamos utilizando uma entidade unica.
-    private Boolean medico;
-    private Boolean enfermeiro;
-    private Boolean enfermeiro_chefe;
-    private Boolean assistente_social;
-    private Boolean paciente;
     //Atributo para User Ativo ou Inativo
-    private Boolean ativo = Boolean.TRUE;
+    private Boolean ativo;
+
+    //Profissoes
+    @Enumerated(EnumType.STRING)
+    private Profissao profissao;
 
     //atributos da pessoa
-    private String name;
+    private String nome;
     private String cpf;
-    private Integer idade;
     private String documento_profisional;
     private String email;
     private String senha;
 
     //Construtor completo pois o liso nao precisa pois o Lombook ja tem o @NoArgsConstructor
-    @Builder
-    public User(Boolean medico, Boolean enfermeiro,
-                Boolean enfermeior_chefe, Boolean assistente_social,
-                Boolean paciente, String name, String cpf,String email, String senha) {
+    public User(Profissao profissao, String nome, String cpf,
+                String email, String senha,
+                String documento_profisional) {
 
-        this.medico = medico;
-        this.enfermeiro = enfermeiro;
-        this.enfermeiro_chefe = enfermeior_chefe;
-        this.assistente_social = assistente_social;
-        this.paciente = paciente;
-        this.name = name;
+        this.profissao = profissao;
+        this.nome = nome;
         this.cpf = cpf;
         this.email = email;
         this.senha = senha;
+        this.documento_profisional = documento_profisional;
     }
 
-    //Retirnado Getters and Setters pq o Lombok tava mostrando errinho
+    //Lombok resolve get set e no arguments builder
 }
