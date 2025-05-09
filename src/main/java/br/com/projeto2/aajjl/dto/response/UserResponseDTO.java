@@ -1,6 +1,9 @@
 package br.com.projeto2.aajjl.dto.response;
 
-public class UserDTO {
+import lombok.Getter;
+
+@Getter
+public class UserResponseDTO {
 
     private Long id;
 
