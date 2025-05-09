@@ -24,18 +24,22 @@ public class User {
     private Boolean enfermeiro_chefe;
     private Boolean assistente_social;
     private Boolean paciente;
+    //Atributo para User Ativo ou Inativo
+    private Boolean ativo = Boolean.TRUE;
 
     //atributos da pessoa
     private String name;
     private String cpf;
     private Integer idade;
     private String documento_profisional;
+    private String email;
+    private String senha;
 
     //Construtor completo pois o liso nao precisa pois o Lombook ja tem o @NoArgsConstructor
     @Builder
     public User(Boolean medico, Boolean enfermeiro,
                 Boolean enfermeior_chefe, Boolean assistente_social,
-                Boolean paciente, String name, String cpf) {
+                Boolean paciente, String name, String cpf,String email, String senha) {
 
         this.medico = medico;
         this.enfermeiro = enfermeiro;
@@ -44,6 +48,8 @@ public class User {
         this.paciente = paciente;
         this.name = name;
         this.cpf = cpf;
+        this.email = email;
+        this.senha = senha;
     }
 
     //Retirnado Getters and Setters pq o Lombok tava mostrando errinho
