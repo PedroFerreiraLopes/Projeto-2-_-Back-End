@@ -1,9 +1,9 @@
-package br.com.projeto2.aajjl.dto.request;
+package br.com.projeto2.aajjl.L_dto.request;
 
 import lombok.Getter;
 
 @Getter
-public class UserRequestDTO {
+public class L_UserRequestDTO {
     //Esse DTO de request existe pois para registrar um novo User nao precisa ter acesso aos metodos
     //oou Services que o Respose vai precisar ter, no caso, sao duas classes com tipos de dados difernetes
     //sendo trazidos ou levados

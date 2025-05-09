@@ -1,9 +1,9 @@
-package br.com.projeto2.aajjl.dto.response;
+package br.com.projeto2.aajjl.L_dto.response;
 
 import lombok.Getter;
 
 @Getter
-public class UserResponseDTO {
+public class L_UserResponseDTO {
 
     private Long id;
 
