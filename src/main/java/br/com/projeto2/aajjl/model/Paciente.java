@@ -20,6 +20,10 @@ public class Paciente {
     @Setter(AccessLevel.NONE)
     private Long id;
 
+    //Atributo para User Ativo ou Inativo
+    private Boolean ativo;
+    //Tem que ter pra poder fazer funcionar o softDelete
+
     //atributos da pessoa
     private String nome;
     private String cpf;
