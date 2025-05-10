@@ -1,7 +1,6 @@
 package br.com.projeto2.aajjl.service;
 
 import br.com.projeto2.aajjl.model.Paciente;
-import br.com.projeto2.aajjl.model.User;
 import br.com.projeto2.aajjl.repository.PacienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,21 +29,48 @@ public class PacienteService {
 
     public Optional<Paciente> update(Long id, Paciente newData) {
         return pacienteRepository.findById(id).map(paciente -> {
-            paciente.setNome(newData.getNome());
-            paciente.setCpf(newData.getCpf());
-            paciente.setDoenca(newData.getDoenca());
-            paciente.setObservacao(newData.getObservacao());
-            paciente.setCEP(newData.getCEP());
-            paciente.setRua(newData.getRua());
-            paciente.setNumero(newData.getNumero());
-            paciente.setBairro(newData.getBairro());
-            paciente.setComplemento(newData.getComplemento());
-            paciente.setCidade(newData.getCidade());
-            paciente.setEstado(newData.getEstado());
-            paciente.setPrioridade(newData.getPrioridade());
+
+            if (newData.getNome() != null && !newData.getNome().trim().isEmpty()) {
+                paciente.setNome(newData.getNome().trim());
+            }
+            if (newData.getCpf() != null && !newData.getCpf().trim().isEmpty()) {
+                paciente.setCpf(newData.getCpf().trim());
+            }
+            if (newData.getDoenca() != null && !newData.getDoenca().trim().isEmpty()) {
+                paciente.setDoenca(newData.getDoenca().trim());
+            }
+            if (newData.getObservacao() != null && !newData.getObservacao().trim().isEmpty()) {
+                paciente.setObservacao(newData.getObservacao().trim());
+            }
+            if (newData.getCEP() != null && !newData.getCEP().trim().isEmpty()) {
+                paciente.setCEP(newData.getCEP().trim());
+            }
+            if (newData.getRua() != null && !newData.getRua().trim().isEmpty()) {
+                paciente.setRua(newData.getRua().trim());
+            }
+            if (newData.getNumero() != null && !newData.getNumero().trim().isEmpty()) {
+                paciente.setNumero(newData.getNumero().trim());
+            }
+            if (newData.getBairro() != null && !newData.getBairro().trim().isEmpty()) {
+                paciente.setBairro(newData.getBairro().trim());
+            }
+            if (newData.getComplemento() != null && !newData.getComplemento().trim().isEmpty()) {
+                paciente.setComplemento(newData.getComplemento().trim());
+            }
+            if (newData.getCidade() != null && !newData.getCidade().trim().isEmpty()) {
+                paciente.setCidade(newData.getCidade().trim());
+            }
+            if (newData.getEstado() != null && !newData.getEstado().trim().isEmpty()) {
+                paciente.setEstado(newData.getEstado().trim());
+            }
+            if (newData.getPrioridade() != null) {
+                paciente.setPrioridade(newData.getPrioridade());
+            }
+
             return pacienteRepository.save(paciente);
         });
     }
+
 
     public boolean delete(Long id) {
         return pacienteRepository.findById(id).map(paciente -> {
@@ -68,5 +94,6 @@ public class PacienteService {
                 .filter(Paciente::getAtivo)
                 .toList();
     }
+
 }
 
