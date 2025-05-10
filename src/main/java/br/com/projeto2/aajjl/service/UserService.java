@@ -43,8 +43,8 @@ public class UserService {
                 user.setCpf(userDetails.getCpf().trim());
             }
 
-            if (userDetails.getDocumento_profisional() != null && !userDetails.getDocumento_profisional().trim().isEmpty()) {
-                user.setDocumento_profisional(userDetails.getDocumento_profisional().trim());
+            if (userDetails.getConsenhoRegional() != null && !userDetails.getConsenhoRegional().trim().isEmpty()) {
+                user.setConsenhoRegional(userDetails.getConsenhoRegional().trim());
             }
 
             if (userDetails.getEmail() != null && !userDetails.getEmail().trim().isEmpty()) {
