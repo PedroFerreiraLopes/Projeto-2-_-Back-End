@@ -88,4 +88,12 @@ public class UserService {
                 .filter(User::getAtivo)
                 .toList();
     }
+
+    public List<User> getAllAtivos() {
+        return userRepository.findByAtivoTrue();
+    }
+
+    public List<User> getAllInativos() {
+        return userRepository.findByAtivoFalse();
+    }
 }

@@ -63,5 +63,17 @@ public class UserController {
     public ResponseEntity<List<User>> findByProfissao(@RequestParam Profissao profissao) {
         return ResponseEntity.ok(userService.findByProfissao(profissao));
     }
+
+    //Find by Ativo(True)
+    @GetMapping("/ativos")
+    public ResponseEntity<List<User>> getAllAtivos() {
+        return ResponseEntity.ok(userService.getAllAtivos());
+    }
+
+    //Find by Ativo(False)
+    @GetMapping("/inativos")
+    public ResponseEntity<List<User>> getAllInativos() {
+        return ResponseEntity.ok(userService.getAllInativos());
+    }
 }
 

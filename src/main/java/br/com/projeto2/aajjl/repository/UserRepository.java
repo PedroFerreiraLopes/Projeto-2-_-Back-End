@@ -11,4 +11,6 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findByNome(String nome);
     List<User> findByProfissao(Profissao profissao);
+    List<User> findByAtivoTrue();
+    List<User> findByAtivoFalse();
 }
