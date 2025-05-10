@@ -42,8 +42,8 @@ public class PacienteService {
             if (newData.getObservacao() != null && !newData.getObservacao().trim().isEmpty()) {
                 paciente.setObservacao(newData.getObservacao().trim());
             }
-            if (newData.getCEP() != null && !newData.getCEP().trim().isEmpty()) {
-                paciente.setCEP(newData.getCEP().trim());
+            if (newData.getCep() != null && !newData.getCep().trim().isEmpty()) {
+                paciente.setCep(newData.getCep().trim());
             }
             if (newData.getRua() != null && !newData.getRua().trim().isEmpty()) {
                 paciente.setRua(newData.getRua().trim());

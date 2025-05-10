@@ -31,7 +31,7 @@ public class Paciente {
     private String observacao;
 
     //atributos endereço
-    private String CEP;
+    private String cep;
     private String rua;
     private String numero;
     private String bairro;
@@ -45,14 +45,14 @@ public class Paciente {
 
     //construtor
     public Paciente(String nome, String cpf, String doenca,
-                    String CEP, String rua, String numero,
+                    String cep, String rua, String numero,
                     String bairro, String complemento,
                     String cidade, String estado,
                     Prioridade prioridade) {
         this.nome = nome;
         this.cpf = cpf;
         this.doenca = doenca;
-        this.CEP = CEP;
+        this.cep = cep;
         this.rua = rua;
         this.numero = numero;
         this.bairro = bairro;
@@ -69,7 +69,7 @@ public class Paciente {
                 ", cpf='" + cpf + '\'' +
                 ", doenca='" + doenca + '\'' +
                 ", observacao='" + observacao + '\'' +
-                ", CEP='" + CEP + '\'' +
+                ", CEP='" + cep + '\'' +
                 ", rua='" + rua + '\'' +
                 ", numero='" + numero + '\'' +
                 ", bairro='" + bairro + '\'' +

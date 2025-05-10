@@ -13,3 +13,4 @@ public class AajjlApplication {
 }
 
 //Marco 1 - CRUD funcional para Users com Rotas testadas no Postman e MySQLWorkBench
+//Marco 2 - CRUD funcional para Paciente com Rotas testadas no Postman e MySQLWorkBench

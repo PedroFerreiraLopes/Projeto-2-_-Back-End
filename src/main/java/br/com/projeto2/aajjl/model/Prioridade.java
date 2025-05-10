@@ -4,5 +4,5 @@ public enum Prioridade {
     VERMELHO,
     AMARELO,
     VERDE
+
 }
-//VERMELHOR PRIORIDADE MAIS ALTA, VERDE MENOS PRIORIDADE
