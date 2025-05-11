@@ -12,8 +12,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Agendamento {
-    //atributos do sistema
 
+    //atributos do sistema
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, unique = true)
@@ -41,7 +41,6 @@ public class Agendamento {
     private Prioridade prioridade;
 
     //Construtor
-
     public Agendamento(Boolean concluido, User user, Paciente pacinete,
                        Turno turno, Integer dia, String mes, Integer ano,
                        String observacao, String motivoDoAtendimento,
