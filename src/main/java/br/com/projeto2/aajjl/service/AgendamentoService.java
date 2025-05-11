@@ -66,7 +66,10 @@ public class AgendamentoService {
 
     public boolean delete(Long id) {
         return agendamentoRepository.findById(id).map(agendamento -> {
-            agendamentoRepository.delete(agendamento);
+            agendamento.setConcluido(true);
+            //nao deletamos os agendamentos somente os colocamos
+            // como concluidos para podermos ter historico
+            agendamentoRepository.save(agendamento);
             return true;
         }).orElse(false);
     }
