@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "Paciente")
 @NoArgsConstructor
@@ -19,6 +21,14 @@ public class Paciente {
     @Column(name = "id", nullable = false, unique = true)
     @Setter(AccessLevel.NONE)
     private Long id;
+
+    //Atributos de relacionamento das tabelas no BD
+    @OneToMany(mappedBy = "pacinete")
+    private List<Agendamento> agendamentos; //aqui temos a lista de agendamentos relacionados ao cliente
+
+    @ManyToOne
+    @JoinColumn(name = "cadastrado_por_id")
+    private User cadastradoPor; //Aqui temos o registro do User que cadastrou o Paciente no sistema
 
     //Atributo para User Ativo ou Inativo
     private Boolean ativo;

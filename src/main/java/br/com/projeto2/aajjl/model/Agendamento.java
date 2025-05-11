@@ -12,8 +12,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Agendamento {
-    //atributos do sistema
 
+    //atributos do sistema
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, unique = true)
@@ -23,11 +23,16 @@ public class Agendamento {
     //Atributo para Atendimento Ativo ou Concluido
     private Boolean concluido;
 
+    //Atributos de relacionamentos das tabelas no BD
     //User do agendamento(quem atende)
-    private User user;
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user; //aqui temos o user que abriu ou criou o agendamento
 
     //Paciente do agendamento(Quem é atendido)
-    private Paciente pacinete;
+    @ManyToOne
+    @JoinColumn(name = "paciente_id", nullable = false)
+    private Paciente pacinete; //aqui temos o paciente do agendamento em questão
 
     //Atributos do agendamento em si
     private Turno turno;
@@ -41,7 +46,6 @@ public class Agendamento {
     private Prioridade prioridade;
 
     //Construtor
-
     public Agendamento(Boolean concluido, User user, Paciente pacinete,
                        Turno turno, Integer dia, String mes, Integer ano,
                        String observacao, String motivoDoAtendimento,
